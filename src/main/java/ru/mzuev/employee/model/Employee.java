@@ -1,5 +1,6 @@
 package ru.mzuev.employee.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -9,15 +10,32 @@ public class Employee {
     @Id
     private long id;
     private String first_name;
+    @Column(columnDefinition="default 'fullname'")
     private String full_name;
+    @Column(columnDefinition="varchar(50) default 'e-mail'")
     private String email;
     private String phone_number;
     private String address_city;
     private String address_street;
     private String address_house;
-    private long location_latitude;
-    private long location_longitude;
+    private String location_latitude;
+    private String location_longitude;
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", first_name='" + first_name + '\'' +
+                ", full_name='" + full_name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone_number='" + phone_number + '\'' +
+                ", address_city='" + address_city + '\'' +
+                ", address_street='" + address_street + '\'' +
+                ", address_house='" + address_house + '\'' +
+                ", location_latitude='" + location_latitude + '\'' +
+                ", location_longitude='" + location_longitude + '\'' +
+                '}';
+    }
 
     public long getId() {
         return id;
@@ -83,19 +101,19 @@ public class Employee {
         this.address_house = address_house;
     }
 
-    public long getLocation_latitude() {
+    public String getLocation_latitude() {
         return location_latitude;
     }
 
-    public void setLocation_latitude(long location_latitude) {
+    public void setLocation_latitude(String location_latitude) {
         this.location_latitude = location_latitude;
     }
 
-    public long getLocation_longitude() {
+    public String getLocation_longitude() {
         return location_longitude;
     }
 
-    public void setLocation_longitude(long location_longitude) {
+    public void setLocation_longitude(String location_longitude) {
         this.location_longitude = location_longitude;
     }
 }

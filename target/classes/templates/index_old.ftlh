@@ -1,66 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+<#--<html>-->
 <head>
     <meta charset="UTF-8">
     <title>Employee</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 
 
+
 </head>
-
-
+<body>
 <h1>Employee1</h1>
 
+<#--<script src="https://mapgl.2gis.com/api/js/v1"></script>-->
+<#--<h3>Add Employee to DB</h3>-->
+<#--<form action="/add" method="post">-->
+<#--    <table border="1px">-->
+<#--        <tr>-->
+<#--            <td>-->
+<#--                <label>Priority</label>-->
+<#--                <input type="number" name="priorityId">-->
+<#--            </td>-->
+<#--            <td>-->
+<#--                <label>Description</label>-->
+<#--                <input type="text" name="description">-->
+<#--            </td>-->
+<#--            <td>-->
+<#--                <label>Date</label>-->
+<#--                <input type="date" name="date">-->
+<#--            </td>-->
 
+<#--            <td>-->
+<#--                <input type="submit" value="add task">-->
+<#--            </td>-->
 
-<style>
-    .modal-window {
-        display: none;
-        position: absolute;
-        z-index: 100;
-        background: #eee;
-        padding: 5px;
-        border-radius: 1px;
-        box-shadow: 2px 2px 5px #000000;
+<#--        </tr>-->
 
-        left: 25%;
-
-        top: 10%;
-    }
-    .modal-window-close {
-        position: absolute;
-        font-size: 12px;
-        cursor: pointer;
-        right: 4px;
-        top: 4px;
-    }
-    .modal-window-title {
-        text-align: center;
-    }
-    .modal-window-content {
-        padding: 5px;
-    }
-</style>
-
-<script type="text/javascript">
-    function showModal(self) {
-        var modal = document.getElementById('modalWindow');
-        var iframe = modal.getElementsByTagName('iframe')[0];
-        iframe.src = self.href;
-        modal.style.display = 'block';
-        return false;
-    }
-</script>
-<div id="modalWindow" class="modal-window">
-    <div class="modal-window-close" onclick="this.parentNode.style.display='none';">Закрыть</div>
-    <div class="modal-window-title"></div>
-    <div class="modal-window-content">
-        <iframe width="645" height="760" src="about:blank" frameborder="0"></iframe>
-    </div>
-</div>
-
-<#--<p>Текст <a href="https://www.openstreetmap.org/?mlat=59.9509&mlon=30.3017#map=10/59.9509/30.3017" onclick="return showModal(this);">ткни сюда</a>, еще текст</p>-->
-
+<#--    </table>-->
+<#--</form>-->
 
 <br>
 <h2>Employee list(employee count : ${employeeSize})</h2>
@@ -88,7 +65,7 @@
             <td>${employee.address_street}</td>
             <td>${employee.address_house}</td>
 
-            <td><a href="${'/map/'+employee.id?c}" onclick="return showModal(this);">Открыть карту</a></td>
+            <td><a href="${'/map/'+employee.id?c}"">Открыть карту</a></td>
         </tr>
     </#list>
 </table>
