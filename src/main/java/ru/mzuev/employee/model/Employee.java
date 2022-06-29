@@ -10,9 +10,7 @@ public class Employee {
     @Id
     private long id;
     private String first_name;
-    @Column(columnDefinition="default 'fullname'")
     private String full_name;
-    @Column(columnDefinition="varchar(50) default 'e-mail'")
     private String email;
     private String phone_number;
     private String address_city;
@@ -20,6 +18,12 @@ public class Employee {
     private String address_house;
     private String location_latitude;
     private String location_longitude;
+
+
+    public Employee() {
+    }
+
+
 
     @Override
     public String toString() {

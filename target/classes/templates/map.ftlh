@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2GIS Map API</title>
+    <title>Map</title>
     <meta name="description" content="Quckstart with 2GIS Map API" />
 
 </head>
