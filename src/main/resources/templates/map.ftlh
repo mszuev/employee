@@ -10,7 +10,17 @@
 <body>
 
 <iframe width="625" height="730" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=29.5232%2C59.4541%2C31.1127%2C60.4255&amp;layer=mapnik&amp;marker=${employee.location_latitude}%2C${employee.location_longitude}"
+<#--        src="https://www.openstreetmap.org/export/embed.html?bbox=29.5232%2C59.4541%2C31.1127%2C60.4255&amp;layer=mapnik&amp;marker=${employee.location_latitude}%2C${employee.location_longitude}"-->
+        src="https://www.openstreetmap.org/export/embed.html?bbox=
+            ${(employee.location_longitude?number-0.0141)?c}
+            %2C
+            ${(employee.location_latitude?number-0.0045)?c}
+            %2C
+            ${(employee.location_longitude?number+0.0141)?c}
+            %2C
+            ${(employee.location_latitude?number+0.0045)?c}
+            &amp;layer=mapnik&amp;marker=${employee.location_latitude}%2C${employee.location_longitude}"
+
         style="border: 1px solid black">
 
 </iframe>

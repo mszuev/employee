@@ -3,8 +3,10 @@ package ru.mzuev.employee.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "ufa")
 public class Employee {
 
     @Id
@@ -18,11 +20,11 @@ public class Employee {
     private String address_house;
     private String location_latitude;
     private String location_longitude;
+    private int region;
 
 
     public Employee() {
     }
-
 
 
     @Override
@@ -38,6 +40,7 @@ public class Employee {
                 ", address_house='" + address_house + '\'' +
                 ", location_latitude='" + location_latitude + '\'' +
                 ", location_longitude='" + location_longitude + '\'' +
+                ", region='" + region + '\'' +
                 '}';
     }
 
@@ -119,5 +122,13 @@ public class Employee {
 
     public void setLocation_longitude(String location_longitude) {
         this.location_longitude = location_longitude;
+    }
+
+    public int getRegion() {
+        return region;
+    }
+
+    public void setRegion(int region) {
+        this.region = region;
     }
 }

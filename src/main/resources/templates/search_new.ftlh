@@ -83,40 +83,43 @@
 
     <h5>Найдено записей: ${employeeSize}</h5>
 
-    <table class="table table-striped table-sm table-hover">
-        <thead>
-        <tr>
-            <th scope="col">Имя</th>
-            <th scope="col">Полное имя</th>
-            <th scope="col">Email</th>
-            <th scope="col">Телефон</th>
-            <th scope="col">Город</th>
-            <th scope="col">Улица</th>
-            <th scope="col">Дом</th>
-            <th scope="col">Показать на карте</th>
-        </tr>
-        </thead>
+    <#if employeeSize == 0>
+        <#else>
+            <table class="table table-striped table-sm table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Полное имя</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Телефон</th>
+                    <th scope="col">Город</th>
+                    <th scope="col">Улица</th>
+                    <th scope="col">Дом</th>
+                    <th scope="col">Показать на карте</th>
+                </tr>
+                </thead>
 
-        <tbody>
-        <#list page.content as employee>
-            <tr>
-                <td>${employee.first_name}</td>
-                <td>${employee.full_name}</td>
-                <td>${employee.email}</td>
-                <td>${employee.phone_number}</td>
-                <td>${employee.address_city}</td>
-                <td>${employee.address_street}</td>
-                <td>${employee.address_house}</td>
-                <td><a href="${'/map/'+employee.id?c}" onclick="return showModal(this);">Открыть карту</a></td>
-            </tr>
-        </#list>
-        </tbody>
-    </table>
+                <tbody>
+                <#list page.content as employee>
+                    <tr>
+                        <td>${employee.first_name}</td>
+                        <td>${employee.full_name}</td>
+                        <td>${employee.email}</td>
+                        <td>${employee.phone_number}</td>
+                        <td>${employee.address_city}</td>
+                        <td>${employee.address_street}</td>
+                        <td>${employee.address_house}</td>
+                        <td><a href="${'/map/'+employee.id?c}" onclick="return showModal(this);">Открыть карту</a></td>
+                    </tr>
+                </#list>
+                </tbody>
+            </table>
 
-    <div class="d-flex justify-content-center">
-        <@p.pager url page />
-    </div>
-
+            <div class="d-flex justify-content-center">
+                <@p.pager url page />
+            </div>
+    </#if>
+    
 </div>
 </body>
 </html>
