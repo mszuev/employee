@@ -24,7 +24,6 @@
         style="border: 1px solid black">
 
 </iframe>
-<#--<br/><small><a href="https://www.openstreetmap.org/?mlat=59.9385&amp;mlon=30.3168#map=10/59.9385/30.3168">Посмотреть более крупную карту</a></small>-->
 
 </body>
 </html>

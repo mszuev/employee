@@ -71,6 +71,29 @@
                     <label>Поиск по имени</label>
                     <input type="text" name="search">
                 </td>
+<#--                <td>-->
+<#--                    <label>Регион</label>-->
+<#--                    <input type="text" name="region">-->
+<#--                </td>-->
+
+<#--                <p>-->
+<#--                    <select name="region">-->
+<#--                        <#list regionList as region>-->
+<#--                            <option value="${region.id}">${region.cityName}</option>-->
+<#--                        </#list>-->
+<#--                    </select>-->
+<#--                </p>-->
+
+                <p>
+                    <select name="region">
+                        <option selected value="${currentRegionId}">${currentCityName}</option>
+                        <#list regionList as region>
+                            <option value="${region.id}">${region.cityName}</option>
+
+                        </#list>
+                    </select>
+                </p>
+
                 <td>
                     <input type="submit" value="Найти">
                 </td>
@@ -119,7 +142,7 @@
                 <@p.pager url page />
             </div>
     </#if>
-    
+
 </div>
 </body>
 </html>

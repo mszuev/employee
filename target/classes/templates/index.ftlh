@@ -71,6 +71,22 @@
                             <label>Поиск по имени</label>
                             <input type="text" name="search">
                         </td>
+<#--                        <td>-->
+<#--                            <label>Регион</label>-->
+<#--                            <input type="text" name="region">-->
+<#--                        </td>-->
+
+
+                        <p>
+                            <select name="region">
+                                <option selected value=${currentRegionId}>${currentCityName}</option>
+                                <#list regionList as region>
+                                    <option value="${region.id}">${region.cityName}</option>
+
+                                </#list>
+                            </select>
+                        </p>
+
                         <td>
                             <input type="submit" value="Найти">
                         </td>
@@ -78,6 +94,7 @@
 
                 </table>
             </form>
+
 
             <br>
             <table class="table table-striped table-sm table-hover">

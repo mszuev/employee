@@ -27,4 +27,7 @@ public interface EmployeeRepository extends JpaRepository <Employee, Long> {
 
     @Query("SELECT s FROM Employee s WHERE lower(s.first_name) like %?1% or lower(s.full_name) like %?1%")
     Page<Employee> findByName(String text, Pageable pageable);
+
+    @Query("SELECT s FROM Employee s WHERE s.region = ?2 and (lower(s.first_name) like %?1% or lower(s.full_name) like %?1%)")
+    Page<Employee> findByNameAllRegions(String text, int region, Pageable pageable);
 }

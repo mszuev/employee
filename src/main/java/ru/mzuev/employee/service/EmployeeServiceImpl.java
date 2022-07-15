@@ -21,12 +21,6 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
 
-//    @Override
-//    public List<Employee> readAll() {
-////        return employeeRepository.findAll(Sort.by(Sort.Order.asc("full_name")));
-//        return employeeRepository.findAll();
-//    }
-
     @Override
     public Page<Employee> findAll(Pageable pageable) {
         return employeeRepository.findAll(pageable);
@@ -70,5 +64,10 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Override
     public Page<Employee> findByName(String text, Pageable pageable) {
         return employeeRepository.findByName(text, pageable);
+    }
+
+    @Override
+    public Page<Employee> findByNameAllRegions(String text, int region, Pageable pageable) {
+        return employeeRepository.findByNameAllRegions(text, region, pageable);
     }
 }
