@@ -12,7 +12,6 @@ import ru.mzuev.employee.service.EmployeeService;
 import org.springframework.stereotype.Controller;
 import ru.mzuev.employee.service.HttpSession;
 import ru.mzuev.employee.service.RegionService;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

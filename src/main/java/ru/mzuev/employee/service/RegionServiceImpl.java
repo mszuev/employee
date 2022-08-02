@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.mzuev.employee.model.Region;
 import ru.mzuev.employee.repository.RegionRepository;
-
 import java.util.List;
 
 @Service

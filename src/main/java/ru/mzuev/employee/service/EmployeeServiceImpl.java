@@ -1,13 +1,11 @@
 package ru.mzuev.employee.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ru.mzuev.employee.model.Employee;
 import ru.mzuev.employee.repository.EmployeeRepository;
-
 import java.util.List;
 
 @Service
