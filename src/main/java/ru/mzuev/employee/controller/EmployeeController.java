@@ -3,9 +3,7 @@ package ru.mzuev.employee.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.mzuev.employee.model.Employee;
@@ -39,15 +37,6 @@ public class EmployeeController {
         return "map";
     }
 
-
-//    @GetMapping("/")
-//    public String test(Model model, @PageableDefault(size = 15) Pageable pageable) {
-//
-//        Page <Employee> page = employeeService.findAll(pageable);
-//        model.addAttribute("page", page);
-//        model.addAttribute("url", "/");
-//        return "index";
-//    }
 
     @GetMapping("/")
     public String test(@RequestParam(defaultValue = "0") int page,
@@ -109,7 +98,7 @@ public class EmployeeController {
         model.addAttribute("currentRegionId", httpSession.getRegion());
         model.addAttribute("currentCityName", currentCityName);
         model.addAttribute("url", "/search");
-        return "search_new";
+        return "search";
     }
 
     @GetMapping("/search")
@@ -141,6 +130,6 @@ public class EmployeeController {
         model.addAttribute("currentRegionId", httpSession.getRegion());
         model.addAttribute("currentCityName", currentCityName);
         model.addAttribute("url", "/search");
-        return "search_new";
+        return "search";
     }
 }

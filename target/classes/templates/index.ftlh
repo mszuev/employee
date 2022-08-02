@@ -71,11 +71,6 @@
                             <label>Поиск по имени</label>
                             <input type="text" name="search">
                         </td>
-<#--                        <td>-->
-<#--                            <label>Регион</label>-->
-<#--                            <input type="text" name="region">-->
-<#--                        </td>-->
-
 
                         <p>
                             <select name="region">
